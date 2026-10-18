@@ -182,15 +182,11 @@
         <div class="password_grid">
             <p class="password_text">Hasło</p>
             <div class="input_holder">
-                <input class="password_input" type="password" placeholder="Wpisz hasło" autocomplete="current-password">
+                <input class="password_input" type="password" autocomplete="current-password">
                 <div class="eye"></div>
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                 <p class="forgot_password">Nie pamiętasz hasła?</p>
-                <div class="faceid-trigger-row" onclick="startFaceID()">
-                    <img src="more_files/face.png" class="faceid-trigger-icon" alt="Face ID">
-                    <span>Face ID</span>
-                </div>
             </div>
         </div>
     </div>
@@ -199,24 +195,10 @@
         <p class="login">Zaloguj się</p>
 
         <div class="data" style="margin-bottom: 16px;">
-            <img class="logo_other" style="height: 50px; margin: 0 auto; display: block;" src="IMG_4756.png" alt="COI">
+            <img class="logo_other" style="height: 50px; margin: 0 auto; display: block; background-color: white; border-radius: 7px;" src="IMG_4756_negate.png" alt="COI">
         </div>
         <div>
             <p class="version" style="text-align: center; color: #888d96;">wersja 4.92.0 (6622)</p>
-        </div>
-    </div>
-
-    <!-- Modal Face ID -->
-    <div class="faceid-modal-backdrop" id="faceIdModal">
-        <div class="faceid-card">
-            <div class="faceid-icon-wrapper">
-                <div class="faceid-pulse" id="faceIdPulse"></div>
-                <img src="more_files/face.png" class="faceid-icon" id="faceIdIcon" alt="Face ID">
-                <div class="faceid-check" id="faceIdCheck">✓</div>
-            </div>
-            <div class="faceid-title">Face ID dla mObywatel</div>
-            <div class="faceid-subtitle" id="faceIdSubtitle">Potwierdź tożsamość, aby się zalogować</div>
-            <button class="faceid-cancel-btn" onclick="cancelFaceID()">Użyj hasła</button>
         </div>
     </div>
 

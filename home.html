@@ -20,8 +20,8 @@
             box-sizing: border-box;
         }
         .more-crest-img {
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             border-radius: 7px;
             display: block;
         }
@@ -83,10 +83,29 @@
             display: flex;
             gap: 16px;
         }
+        .dod_dok_btn{
+            width: 56%;
+            margin-left: auto;
+            margin-top: 6%;
+            background-color:#388af6;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            gap: 16px;
+        }
         .docs-link-btn {
+            margin-top: 25px;
             color: #388af6;
             font-size: 15px;
             font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .dod_dok_link_btn {
+            margin-top: 25px;
+            color: black;
+            font-size: 15px;
+            font-weight: 500;
             cursor: pointer;
             text-decoration: none;
         }
@@ -190,15 +209,22 @@
 
         <div class="docs-title-row">
             <h1 class="docs-main-title">Dokumenty</h1>
-            <div class="docs-actions-links">
-                <span class="docs-link-btn" onclick="sendTo('selectdocs')">Dostosuj</span>
-                <span class="docs-link-btn" onclick="sendTo('selectdocs')">Dodaj</span>
-            </div>
         </div>
 
         <!-- Dynamiczny stos dokumentów -->
         <div class="wallet-stack" id="docsStack">
             <!-- Renderowane przez skrypt ponizej -->
+        </div>
+        <div class="docs-actions-links">
+                <span class="docs-link-btn" onclick="sendTo('selectdocs')">Zarządzaj</span>
+        </div>
+        <div class="dod_dok_btn">
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <img src="free-icon-plus-2549959.png" alt="Dodaj dokument" style="width: 24px; height: 24px;">
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <span class="dod_dok_link_btn" style="margin-bottom: auto; margin-top: auto;" onclick="sendTo('selectdocs')">Dodaj dokument</span>
+                </div>
         </div>
     </div>
 

@@ -68,24 +68,52 @@
             font-size: 16px;
             font-weight: 500;
             padding: 14px 28px;
-            border-radius: 28px;
+            border-radius: 12px;
             width: calc(100% - 48px);
             margin: 0 auto;
             display: block;
             cursor: pointer;
             text-align: center;
         }
+        .camera-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+        .camera-box {
+            position: relative;
+            width: 100%;
+            max-width: 640px;       /* Максимальная ширина окна */
+            aspect-ratio: 4 / 3;   /* Пропорции экрана (можно поставить 4/3 или 1/1 для квадрата) */
+            background-color: #1a1a1a; /* Цвет заглушки, пока камера загружается */ 
+            overflow: hidden; 
+            }  
+        .back_chevron{
+                font-size: 22px;
+                line-height: 1;
+                font-weight: 300;
+                width: 22px;
+                height: 22px;
+        }
+            .videoElement {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Растягивает видео на всю область без искажения пропорций */
+            
+            /* Зеркальное отображение (обычно людям так привычнее смотреть в камеру) */
+            transform: scaleX(-1); 
+        }    /* Чтобы видео не вылезало за скругленные края */
     </style>
 </head>
 <body>
     <div class="scanqr-wrapper">
         <header class="top_grid">
             <div class="action_grid" onclick="sendTo('qr')">
-                <span class="back_chevron">&lt;</span>
-                <span class="back_text">Kod QR</span>
+                <img src="icon_left.png" class="back_chevron" alt="Wstecz">
+                <h1 class="title_text" style="padding-left: 15px;">Zeskanuj kod QR</h1>
             </div>
-            <h1 class="title_text" style="font-size: 16px;">Zeskanuj kod QR</h1>
-            <div class="help_icon_btn" onclick="sendTo('more')">?</div>
+            
         </header>
 
         <p class="scanqr-desc">
@@ -93,11 +121,11 @@
         </p>
 
         <div class="scan-viewfinder">
+
             <div class="corner tl"></div>
             <div class="corner tr"></div>
             <div class="corner bl"></div>
             <div class="corner br"></div>
-            <div class="scan-laser"></div>
         </div>
 
         <button type="button" class="type-code-btn" onclick="promptCode()">Wpisz kod</button>
@@ -137,6 +165,22 @@
                 alert("Kod przyjęty: " + code);
             }
         }
+        async function startCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: {
+                        // Здесь можно задать желаемое разрешение видео от самой камеры
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    },
+                    audio: false
+                });
+                document.getElementById('videoElement').srcObject = stream;
+            } catch (err) {
+                console.error("Ошибка:", err);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', startCamera);
     </script>
 </body>
 </html>
