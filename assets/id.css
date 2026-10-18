@@ -27,12 +27,11 @@ html, body {
 .password_box{
     width: 94%;
     margin-top: 20px;
-    height: 165px;
-    background-color: var(--background2);
+    background-color: #282828;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    border-radius: 18px;
+    border-radius: 15px;
 }
 
 .password_grid{
@@ -53,8 +52,7 @@ html, body {
     text-align: left;
     font-size: 15px;
     opacity: 0.7;
-    margin-top: 20px;
-    margin-bottom: 2px;
+    margin-bottom: 8px;
     z-index: 1;
     color:rgb(255, 255, 255)
 }
@@ -84,8 +82,8 @@ html, body {
 
 .password_input{
     width: 100%;
-    height: 65px;
-    border-radius: 6px;
+    height: 50px;
+    border-radius: 12px;
     outline: none;
     border: 1px solid rgb(128, 128, 128);
     padding: 15px;
@@ -102,9 +100,9 @@ html, body {
 }
 
 .forgot_password{
-    color: var(--text);
-    font-size: 15px;
-    margin-top: 17px;
+    color: #9687f6;
+    font-size: 14px;
+    margin-top: 10px;
     margin-right: auto;
     margin-left: 2px;
     font-weight: 500;
@@ -126,15 +124,17 @@ html, body {
 }
 
 .login{
-    color: var(--background);
-    line-height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    line-height: 51px;
     text-align: center;
-    font-weight: 550;
-    font-size: 23px;
-    width: 100%;
-    background-color: var(--text);
-    height: 60px;
-    border-radius: 40px;
+    font-weight: 500;
+    font-size: 15px;
+    width: 95%;
+    background-color: #9687f6;
+    height: 50px;
+    border-radius: 10px;
     margin-bottom: 25px;
 }
 
@@ -153,15 +153,15 @@ html, body {
     z-index: 0;
     margin-bottom: auto;
     height: max-content;
-    margin-left: 10px;
-    font-weight: 500;
-    font-size: 30px;
+    margin-left: 13px;
+    font-weight: 700;
+    font-size: 25px;
 }
 
 .welcome{
     z-index: 0;
-    font-weight: 600;
-    font-size: 38px;
+    font-weight: 500;
+    font-size: 25px;
     margin-top: auto;
     margin-bottom: auto;
     height: max-content;
@@ -181,11 +181,11 @@ html, body {
 }
 
 .login_text{
-    margin-top: auto;
+    margin-top: 10px;
     margin-bottom: auto;
     height: max-content;
     opacity: 0.8;
-    font-size: 22px;
+    font-size: 15px;
     z-index: 0;
 }
 
@@ -213,7 +213,7 @@ html, body {
 }
 
 .logo{
-    width: 55px;
+    width: 50px;
     z-index: 0;
 }
 
@@ -226,9 +226,15 @@ html, body {
 
 .version {
     opacity: 0.5;
-    font-size: 14px;
+    font-size: 13px;
     width: max-content;   
     margin: 0 auto;       
     display: block;       
     text-align: center;   
+}
+.end_logo{
+    width: 50px;
+    margin: 0 auto;
+    display: block;
+    background-color: white;
 }
