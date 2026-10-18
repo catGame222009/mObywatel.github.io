@@ -144,7 +144,7 @@ body {
             position: absolute;
             top: 0;
             left: 0;
-            width: 25%;
+            width: 26px;
             height: 100%;
             background: linear-gradient(
                 to bottom,
@@ -152,7 +152,7 @@ body {
                 rgba(255, 255, 255, 0.65) 50%,
                 rgba(255, 255, 255, 0) 70%
             );
-            background-size: 100% 300%;
+            background-size: 26px 300%;
             background-position: 50% 50%;
             mix-blend-mode: overlay;
             pointer-events: none;
