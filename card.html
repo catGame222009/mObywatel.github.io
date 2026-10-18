@@ -45,7 +45,11 @@
 
                 <!-- Godło i Rzeczpospolita Polska -->
                 <div class="eagle_section">
-                    <img draggable="true" src="assets/images/eagle.png" class="eagle_video" alt="Godło Polski">
+                    <div style="overflow: hidden;">
+                        <img draggable="true" src="assets/images/eagle.png" class="eagle_video" alt="Godło Polski">
+                        <div class="glare-effect" id="glareLayer"></div>
+                    </div>
+                    
                     <span class="eagle_text">Rzeczpospolita<br>Polska</span>
                 </div>
 
@@ -251,6 +255,27 @@
         }
         setInterval(updateClock, 1000);
         updateClock();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const glare = document.getElementById('glareLayer');
+
+            window.addEventListener('deviceorientation', function(event) {
+                let beta = event.beta;
+                
+                if (beta !== null) {
+                    let minBeta = 20;
+                    let maxBeta = 70;
+                    
+                    if (beta < minBeta) beta = minBeta;
+                    if (beta > maxBeta) beta = maxBeta;
+                    
+                    let percentage = ((beta - minBeta) / (maxBeta - minBeta)) * 100;
+                    
+                    // Движение блеска по картинке: от себя — вверх, на себя — вниз
+                    glare.style.backgroundPosition = `50% ${100 - percentage}%`;
+                }
+            });
+        });
 
         function toggleAnimations() {
             const btn = document.getElementById('animToggle');
