@@ -1,3 +1,4 @@
+
 // Pobierz parametry z URL
 var params = new URLSearchParams(window.location.search);
 
@@ -29,14 +30,13 @@ if (loginBtn) {
     });
 }
 
-var input = document.querySelector(".password_input");
-if (input) {
-    input.addEventListener("keypress", (event) => {
-        if (event.key === 'Enter') {
-            toHome();
+document.getElementById('loginBtn').addEventListener('click', function() {
+            // Проверяем, нужна ли авторизация датчиков (для iOS 13+)
+            if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+                DeviceOrientationEvent.requestPermission()
+
         }
     });
-}
 
 // Logika maskowania hasła
 var eye = document.querySelector(".eye");

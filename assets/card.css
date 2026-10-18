@@ -140,9 +140,30 @@ body {
     gap: 7px;
 }
 
+.glare-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 255, 255, 0.65) 50%,
+                rgba(255, 255, 255, 0) 70%
+            );
+            background-size: 100% 300%;
+            background-position: 50% 50%;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            transition: background-position 0.1s ease-out;
+        }
+
 .eagle_video {
     width: 26px;
     height: auto;
+    object-fit: cover;
+    display: block;
 }
 
 .eagle_text {
